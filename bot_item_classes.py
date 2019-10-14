@@ -1,5 +1,5 @@
-from abc import ABC, abstractmethod, abstractproperty
-import yaml
+from abc import ABC
+
 
 
 class BaseItem(ABC):

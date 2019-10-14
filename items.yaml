@@ -5,5 +5,21 @@
   effects:
     atk_speed:
       formula: quantity * .15
+- name: Tougher Times
+  class: StackingItem
+  description: 13.04% chance to block incoming damage. Stacks with diminishing returns. 5x = 42.86% chance, 10x = 60% chance
+  stacking_desc: "{block:+.2%} chance to block incoming damage with {quantity:,} Tougher Times"
+  effects:
+    block:
+      formula: (1 - 1 / (0.15 * quantity + 1))
+- name: Harvester's Scythe
+  class: StackingItem
+  description:  Gain 5% critical chance. Critical strikes heal for 8 (+4 per stack) health.
+  stacking_desc: Gain {crit_chance:+.2%} critical chance. Critical strikes heal for {heal_on_crit:,} health with {quantity} Harvester's Scythes.
+  effects:
+    crit_chance:
+      formula: ".05"
+    heal_on_crit:
+      formula: "8 + (quantity - 1) * 4"
 
 
