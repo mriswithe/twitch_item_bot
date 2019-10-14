@@ -25,11 +25,12 @@ class StackingItem(BaseItem):
         self._stacking_desc = stacking_desc
 
     def stacked_description(self, quantity):
-        results = {}
+        data = {'quantity': quantity}
         for effect, edict in self._effects.items():
-            results[effect] = eval(edict.get('formula'))
-        formatted = f'{self.name}: {eval(self._stacking_desc)}'
+            data[effect] = eval(edict.get('formula'))
+        formatted = self._stacking_desc.format_map(data)
         return formatted
+
 
 class NonStackingItem(BaseItem):
     pass

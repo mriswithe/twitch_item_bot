@@ -1,7 +1,7 @@
 - name: Soldier's Syringe
   class: StackingItem
   description: Increases attack speed by 15% (+15% per stack).
-  stacking_desc: f"Increases attack speed by {results.get('atk_speed'):+.2%} with {quantity:,} Soldier's Syringes"
+  stacking_desc: Increases attack speed by {atk_speed:+.2%} with {quantity:,} Soldier's Syringes
   effects:
     atk_speed:
       formula: quantity * .15
